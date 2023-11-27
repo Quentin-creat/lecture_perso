@@ -3,8 +3,6 @@ export default class AudioPlayer extends HTMLElement {
     volume = 0.4;
     prevVolume = 0.4;
     initialized = false;
-    barWidth = 3;
-    barGap = 1;
     bufferPercentage = 75;
     nonAudioAttributes = new Set(['title', 'bar-width', 'bar-gap', 'buffer-percentage']);
 
@@ -96,42 +94,21 @@ export default class AudioPlayer extends HTMLElement {
         this.changeVolume();
     }
 
-    /*updateFrequency() {
+    updateFrequency() {
         if (!this.playing) return;
 
         this.analyserNode.getByteFrequencyData(this.dataArray);
 
-        this.canvasCtx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-        this.canvasCtx.fillStyle = "rgba(0, 0, 0, 0)";
-        this.canvasCtx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        if(this.frequencyVisualizer == null) this.shadowRoot.querySelector('audio-visualizer');
 
-        const barCount = (this.canvas.width / (this.barWidth + this.barGap)) - this.barGap;
-        const bufferSize = (this.bufferLength * this.bufferPercentage) / 100;
-        let x = 0;
-
-        // this is a loss representation of the frequency
-        // some data are loss to fit the size of the canvas
-        for (let i = 0; i < barCount; i++) {
-            // get percentage of i value
-            const iPerc = Math.round((i * 100) / barCount);
-            // what the i percentage maps to in the frequency data
-            const pos = Math.round((bufferSize * iPerc) / 100);
-            const frequency = this.dataArray[pos];
-            // frequency value in percentage
-            const frequencyPerc = (frequency * 100) / 255;
-            // frequency percentage value in pixel in relation to the canvas height
-            const barHeight = (frequencyPerc * this.canvas.height) / 100;
-            // flip the height so the bar is drawn from the bottom
-            const y = this.canvas.height - barHeight;
-
-            this.canvasCtx.fillStyle = `rgba(${frequency}, 255, 100)`;
-            this.canvasCtx.fillRect(x, y, this.barWidth, barHeight);
-
-            x += (this.barWidth + this.barGap);
-        }
+        this.frequencyVisualizer.updateFrequency(
+            this.dataArray,
+            this.bufferLength,
+            this.bufferPercentage
+        );
 
         requestAnimationFrame(this.updateFrequency.bind(this))
-    }*/
+    }
 
     //Listeners
     attachEvents() {
@@ -188,7 +165,7 @@ export default class AudioPlayer extends HTMLElement {
             this.playing = true;
             this.playPauseBtn.textContent = 'pause';
             this.playPauseBtn.classList.add('playing');
-            //this.updateFrequency();
+            this.updateFrequency();
         }, false);
 
         document.addEventListener('songSelected', (event) => {
@@ -272,7 +249,7 @@ export default class AudioPlayer extends HTMLElement {
                     <input type="range" min="0" max="2" step="0.01" value="${this.volume}" class="volume-field">
                 </div>
             </figure>
-            <canvas class="visualizer" style="height: 20px"></canvas>
+            <audio-visualizer></audio-visualizer>
         </div>
         `;
 
@@ -287,11 +264,7 @@ export default class AudioPlayer extends HTMLElement {
         this.durationEl = this.progressIndicator.children[2];
         this.canvas = this.shadowRoot.querySelector('canvas');
 
-        this.canvasCtx = this.canvas.getContext("2d");
-        // support retina display on canvas for a more crispy/HD look
-        const scale = window.devicePixelRatio;
-        this.canvas.width = Math.floor(this.canvas.width * scale);
-        this.canvas.height = Math.floor(this.canvas.height * scale);
+        this.frequencyVisualizer = this.shadowRoot.querySelector('audio-visualizer');
         this.titleElement.textContent = this.getAttribute('title');
         this.volumeBar.value = this.volume;
 
