@@ -27,7 +27,7 @@ export default class Visualizer extends HTMLElement {
             const barHeight = (frequencyPerc * this.canvas.height) / 100;
             const y = this.canvas.height - barHeight;
 
-            this.canvasCtx.fillStyle = `rgba(210, 10, 30)`;
+            this.canvasCtx.fillStyle = `rgba(${barHeight*2}, 10, 30)`;
             this.canvasCtx.fillRect(x, y, this.barWidth, barHeight);
 
             x += (this.barWidth + this.barGap);
