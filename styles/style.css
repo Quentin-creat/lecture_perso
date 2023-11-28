@@ -1,0 +1,26 @@
+.bottom-player{
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(161, 161, 161, 0.8);
+  z-index: 100;
+}
+
+.carousel__container{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

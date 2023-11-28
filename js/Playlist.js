@@ -31,11 +31,11 @@ export default class Playlist extends HTMLElement {
 
     render() {
         this.shadowRoot.innerHTML = `
-                <custom-song src="./audios/Kansas-Dust_in_the_Wind.mp3" title="Kansas - Dust in the wind"></custom-song>
-                <custom-song src="./audios/Guns_N_Roses-Sweet_Child_O_Mine.mp3" title="Guns N Roses - Sweet Child O Mine"></custom-song>
-                <custom-song src="./audios/Guns-N-Roses_Knockin_On_Heavens_Door.mp3" title="Guns N Roses - Knocking on heavens door"></custom-song>
-                <custom-song src="./audios/ACDC-Hells_Bells.mp3" title="AC-DC - Hells Bells"></custom-song>
-                <custom-song src="./audios/Lynyrd_Skynyrd-Simple_Man.mp3" title="Lynyrd Skynyrd - Simple man"></custom-song>
+                <custom-song style="margin: 0 2rem" src="./audios/Kansas-Dust_in_the_Wind.mp3" title="Kansas - Dust in the wind"></custom-song>
+                <custom-song style="margin: 0 2rem" src="./audios/Guns_N_Roses-Sweet_Child_O_Mine.mp3" title="Guns N Roses - Sweet Child O Mine"></custom-song>
+                <custom-song style="margin: 0 2rem" src="./audios/Guns-N-Roses_Knockin_On_Heavens_Door.mp3" title="Guns N Roses - Knocking on heavens door"></custom-song>
+                <custom-song style="margin: 0 2rem" src="./audios/ACDC-Hells_Bells.mp3" title="AC-DC - Hells Bells"></custom-song>
+                <custom-song style="margin: 0 2rem" src="./audios/Lynyrd_Skynyrd-Simple_Man.mp3" title="Lynyrd Skynyrd - Simple man"></custom-song>
         `;
         this.songs = Array.from(this.shadowRoot.querySelectorAll('custom-song'));
     }
