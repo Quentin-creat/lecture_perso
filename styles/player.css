@@ -8,10 +8,10 @@
 }
 
 .audio-player {
-    background: #e4e4e4;
+    background: #140152;
     border-radius: 5px;
     padding: 5px;
-    color: black;
+    color: #ffffff;
     display: flex;
     align-items: center;
     position: relative;
@@ -20,7 +20,7 @@
 
 .audio-name {
     position: absolute;
-    color: black;
+    color: #ffffff;
     padding: 5px 10px;
     font-size: 12px;
     width: 100%;
@@ -32,7 +32,7 @@
     white-space: nowrap;
     font-weight: 400;
     top: calc(100% + 2px);
-    background: #e4e4e4;
+    background: #140152;
     margin: 0;
     border-radius: 3px;
 }
@@ -42,7 +42,6 @@
     min-width: 30px;
     height: 30px;
     background: url("../audio-player-icon-sprite.png") 0 center/500% 100% no-repeat;
-    filter: invert(100%);
     appearance: none;
     border: none;
     text-indent: -999999px;
@@ -58,7 +57,6 @@
     min-width: 30px;
     height: 30px;
     background: url("../audio-player-icon-sprite.png") 50% center/500% 100% no-repeat;
-    filter: invert(100%);
     position: relative;
 }
 
@@ -83,21 +81,21 @@
     appearance: none;
     height: 20px;
     width: 10px;
-    background: #6d78ff;
+    background: #22007c;
 }
 
 .volume-field::-moz-range-thumb {
     appearance: none;
     height: 20px;
     width: 10px;
-    background: #6d78ff
+    background: #22007c
 }
 
 .volume-field::-ms-thumb {
     appearance: none;
     height: 20px;
     width: 10px;
-    background: #6d78ff
+    background: #22007c
 }
 
 .progress-indicator {
@@ -122,13 +120,14 @@
     margin: 0;
     overflow: hidden;
     background: none;
+    color: white;
 }
 
 .progress-bar::-webkit-slider-thumb {
     appearance: none;
     height: 3px;
     width: 0;
-    box-shadow: -1000px 0 0 1000px black;
+    box-shadow: -1000px 0 0 1000px #ffffff;
 }
 
 .progress-bar::-moz-range-thumb {

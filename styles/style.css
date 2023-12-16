@@ -1,26 +1,31 @@
-.bottom-player{
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(161, 161, 161, 0.8);
-  z-index: 100;
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.carousel__container{
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: absolute;
-  top: 30%;
-  left: 0;
-  width: 100%;
-  height: auto;
-  display: flex;
+body {
+    background:  #04052E;
+    font-family: 'Inter-Regular', sans-serif;
 }
-
-.container {
+h1 {
+    text-align: center;
+}
+.carousel__container {
+    /* Other styles for your container */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 75vh;
+    overflow-x: auto;
 }
+
+.bottom-player{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+

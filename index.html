@@ -6,21 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Player Web Component</title>
     <link href="./styles/style.css" rel="stylesheet"/>
-    <style>
-        audio-player {
-            margin-top:100%;
-        }
-    </style>
 </head>
 
-<body>
-    <h1>Audio Player Web Component</h1>
+<body class="background">
+    <h1 style="color: white">Audio Player Web Component</h1>
     <div class="container">
         <!-- Utilisation du composant audio-player -->
+        <play-list class="carousel__container"></play-list>
+
         <audio-player class="bottom-player" title="Dust in the wind !" src="./audios/Kansas-Dust_in_the_Wind.mp3" bar-width="5"
                       bar-gap="2" preload></audio-player>
-
-        <play-list class="carousel__container"></play-list>
     </div>
 
 

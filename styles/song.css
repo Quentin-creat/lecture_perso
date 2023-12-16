@@ -1,6 +1,4 @@
 .song-bandeau {
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #e5e5e5;
     padding: 10px 0;
     position: relative;
     width: 100%;
@@ -9,10 +7,12 @@
     transition: transform 0.5s ease;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .song-info {
+    margin-top: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,15 +20,18 @@
     width: 100%;
     height: auto;
     padding: 10px 0;
+    border-radius: 1rem;
+    border: #22007c 1px solid;
+    background-color: #22007c;
 }
 
 .song-info h3 {
+    color: #fff;
+    colo-decoration: none;
     margin: 0;
     padding: 0.5rem;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #333;
-    text-decoration: underline;
 }
 
 .song-info p {
@@ -36,5 +39,19 @@
     padding: 0;
     font-size: .8rem;
     font-weight: 300;
-    color: #333;
+    color: #fff;
+}
+
+.cover-container {
+    max-width: 200px; /* Largeur maximale souhaitée */
+    max-height: 200px; /* Hauteur maximale souhaitée */
+    overflow: hidden; /* Masquer le débordement si l'image est plus grande */
+    display: flex; /* Utilisation de flexbox pour centrer l'image */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;
+}
+
+.cover-image {
+    width: 100%; /* 100% de la largeur du conteneur */
+    height: auto; /* Hauteur automatique pour conserver les proportions originales */
 }

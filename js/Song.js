@@ -1,12 +1,13 @@
 export default class Song extends HTMLElement {
     static getObservedAttributes() {
-        return ['src', 'title'];
+        return ['src', 'title', 'cover'];
     }
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.src = this.getAttribute('src');
         this.title = this.getAttribute('title');
+        this.cover = this.getAttribute('cover');
         this.render();
     }
 
@@ -25,11 +26,15 @@ export default class Song extends HTMLElement {
         });
     }
 
+
+
     render() {
         this.shadowRoot.innerHTML = `
         <link rel="stylesheet" type="text/css" href="./styles/song.css">
             <div class="song-bandeau">
-                <img src="./img/musique.jpg" alt="cover">
+                <div class="cover-container"> 
+                    <img src="${this.cover}" alt="cover" class="cover-image"> 
+                </div>
                 <div class="song-info">
                     <h3>${this.title}</h3>
                     <p>${this.src}</p>
