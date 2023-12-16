@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background:  #04052E;
+    font-family: 'Inter-Regular', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+.carousel__container {
+    /* Other styles for your container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    overflow-x: auto;
+}
+
+.bottom-player{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+}
+
