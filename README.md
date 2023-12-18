@@ -57,7 +57,7 @@ Aller dans le dossier du projet et lancer sur un serveur local __index.html__
 
 ## Schéma d'appel
 
-![Schéma_d-appel]([https://github.com/Quentin-creat/lecture_perso/blob/Johann/img/Diagram_Musiage.svg?raw=true](https://github.com/Quentin-creat/lecture_perso/blob/Johann/img/Diagram_Musiage.svg?raw=true))
+![Schéma_d-appel](https://raw.githubusercontent.com/Quentin-creat/lecture_perso/Johann/img/Diagram_Musiage.svg)
 
 
 ## Détail des fichiers
