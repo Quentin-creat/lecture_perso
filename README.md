@@ -57,7 +57,7 @@ Aller dans le dossier du projet et lancer sur un serveur local __index.html__
 
 ## Schéma d'appel
 
-![Schéma_d-appel]([https://via.placeholder.com/468x300?text=App+Screenshot+Here](https://github.com/Quentin-creat/lecture_perso/blob/Johann/img/Diagram_Musiage.svg))
+![Schéma_d-appel]([https://github.com/Quentin-creat/lecture_perso/blob/Johann/img/Diagram_Musiage.svg?raw=true](https://github.com/Quentin-creat/lecture_perso/blob/Johann/img/Diagram_Musiage.svg?raw=true))
 
 
 ## Détail des fichiers
