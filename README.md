@@ -11,7 +11,7 @@ Le projet vise à créer un lecteur audio web complet et interactif, offrant une
 ## Auteurs
 
 - [Johann Avramov](https://www.github.com/Nogaruki)
-- [Quention Guillou](https://www.github.com/qQuentin-creat)
+- [Quention Guillou](https://www.github.com/Quentin-creat)
 
 
 ## Demo
@@ -56,8 +56,8 @@ Aller dans le dossier du projet et lancer sur un serveur local __index.html__
 
 
 ## Schéma d'appel
+![Schéma_d-appel](https://github.com/Quentin-creat/lecture_perso/assets/66668804/119d14a2-60de-42a9-9936-9292a314d68a)
 
-![Schéma_d-appel](https://raw.githubusercontent.com/Quentin-creat/lecture_perso/Johann/img/Diagram_Musiage.svg)
 
 
 ## Détail des fichiers
@@ -183,3 +183,12 @@ Le fichier `Visualizer.js` définit une classe `Visualizer` qui étend `HTMLElem
 
 #### Conclusion
 La classe `Visualizer` est un composant essentiel pour la représentation visuelle des données audio dans le lecteur audio. Elle utilise les techniques de dessin sur canvas pour créer une visualisation dynamique et esthétique des fréquences audio, enrichissant ainsi l'expérience utilisateur avec des effets graphiques qui accompagnent la musique jouée.
+
+## Effet audio
+Le fichier `Song.js` définit une classe `Song` qui étend `HTMLElement`, indiquant qu'il s'agit d'un élément web personnalisé représentant une chanson dans le lecteur audio.
+
+### Mixtable.js
+Le fichier `Mixtable.js` est un webcomponent faisant office de table de mixage, faite pour contenir plusieurs effets audios (eux mêmes webcomponents) pour pouvoir personnaliser la sortie audio des titres joués.
+
+### Gain.js
+Le fichier `Gain.js` définit une classe `Gain` qui étend `HTMLElement`, indiquant qu'il s'agit d'un élément web personnalisé. Ce webcomponent à pour but d'ajouter du gain à la sortie audio des titres joués.
