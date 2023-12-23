@@ -8,6 +8,8 @@ Le projet vise à créer un lecteur audio web complet et interactif, offrant une
 
 [![Render.com](https://img.shields.io/badge/render.com-deploy-green)](https://musiage.onrender.com)
 
+[Lien du site deployé](https://musiage.onrender.com/)
+
 ## Auteurs
 
 - [Johann Avramov](https://www.github.com/Nogaruki)
