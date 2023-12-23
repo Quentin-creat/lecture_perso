@@ -77,9 +77,13 @@ export default class AudioPlayer extends HTMLElement {
         this.initialized = true;
 
         this.audioCtx = new AudioContext();
-        this.gainNode = this.audioCtx.createGain();
+
         this.analyserNode = this.audioCtx.createAnalyser();
         this.track = this.audioCtx.createMediaElementSource(this.audio);
+
+        const mixTable = document.querySelector('mix-table');
+        this.gainNode = mixTable.createGainNode(this.audioCtx);
+        this.track = mixTable.connectGainNode(this.track, this.gainNode);
 
         this.analyserNode.fftSize = 2048;
         this.bufferLength = this.analyserNode.frequencyBinCount;
@@ -87,7 +91,6 @@ export default class AudioPlayer extends HTMLElement {
         this.analyserNode.getByteFrequencyData(this.dataArray);
 
         this.track
-            .connect(this.gainNode)
             .connect(this.analyserNode)
             .connect(this.audioCtx.destination);
 
@@ -152,7 +155,6 @@ export default class AudioPlayer extends HTMLElement {
                     title: this.title
                 }
             }));
-            console.log("ended")
         }, false);
 
         this.audio.addEventListener('pause', () => {
@@ -172,6 +174,8 @@ export default class AudioPlayer extends HTMLElement {
             this.updateAudio(event.detail.src, event.detail.title);
             this.titleElement.textContent = event.detail.title;
         });
+
+        
     }
 
     updateAudio(src, title) {
@@ -262,7 +266,6 @@ export default class AudioPlayer extends HTMLElement {
         this.currentTimeEl = this.progressIndicator.children[0];
         this.progressBar = this.progressIndicator.children[1];
         this.durationEl = this.progressIndicator.children[2];
-        this.canvas = this.shadowRoot.querySelector('canvas');
 
         this.frequencyVisualizer = this.shadowRoot.querySelector('audio-visualizer');
         this.titleElement.textContent = this.getAttribute('title');
